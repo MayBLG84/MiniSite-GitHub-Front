@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="/sass/main.css" />
   </head>
-  <body>
+  <body class="home">
     <header class="header">
       <a class="header__back-home" href="/"
         ><img
@@ -35,12 +35,12 @@
       >
     </header>
     <main>
-      <section>
-        <p>Portfolio</p>
-        <h1>Hello, je suis Mayara</h1>
-        <p class="js-home-description"></p>
+      <section class="hero">
+        <p class="hero__subtitle">Portfolio</p>
+        <h1 class="hero__title">Hello, je suis Mayara</h1>
+        <p class="hero__description js-home-description">teste</p>
 
-        <a class="button" href="/pages/all-my-projects.html"
+        <a class="hero__button button" href="/pages/all-my-projects.html"
           ><svg
             class="button__icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,10 @@
             ></path></svg
           ><span class="button__label">Voir les cours</span></a
         >
-        <a href="" class="js-home-github-url button--secondary" target="_blank"
+        <a
+          href=""
+          class="js-home-github-url button--secondary hero__button"
+          target="_blank"
           ><svg
             class="button__icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -64,18 +67,18 @@
             ></path></svg
           ><span class="button__label">Accéder à mon GitHub</span></a
         >
-        <div>
-          <img
-            style="width: 50px"
-            class="js-home-avatar"
-            src=""
-            aria-disabled="true"
-          />
+        <div class="hero__avatar">
+          <img class="js-home-avatar" src="" aria-disabled="true" />
         </div>
       </section>
-      <section>
-        <h2>Les derniers projets réalisés</h2>
-        <a href="/pages/all-my-projects.html">Voir tous les projets</a>
+      <section class="legal-mentions">
+        <a href="/pages/legal-mentions.html">Mentions légales</a>
+      </section>
+      <section class="projects">
+        <h2 class="projects__subtitle">Les derniers projets réalisés</h2>
+        <a class="projects__subtitle" href="/pages/all-my-projects.html"
+          >Voir tous les projets</a
+        >
         <ul>
           <li>
             <h3 class="js-home-project-title"></h3>

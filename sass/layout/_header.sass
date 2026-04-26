@@ -1,4 +1,6 @@
 @use '../abstracts/_variables.sass' as var
+@use '../abstracts/_mixins.sass' as mixin
+@use '../abstracts/_functions.sass' as fct
 
 .header
     background-color: var.$grey
@@ -6,11 +8,11 @@
     padding: 0.75rem
     display: flex
     justify-content: space-between
+    margin-bottom: 2rem
+    margin-top: 2rem
 
     &__back-home
-        width: 2.6rem
-        height: 2.6rem
-        border-radius: 100%
+        @include mixin.circle(2.6rem)
         background-color: var.$light-grey
         display: flex
         justify-content: center

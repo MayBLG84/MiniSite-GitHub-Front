@@ -1,0 +1,12 @@
+@use '../abstracts/_main.sass' as abs
+
+.projects
+    background-color: abs.$grey
+    border-radius: 0.5rem
+    color: abs.$white
+    padding: 3rem 2rem
+    position: relative
+
+    &__subtitle 
+        @include abs.font(600, 2rem)
+        margin-bottom: abs.pixToRem(35)
