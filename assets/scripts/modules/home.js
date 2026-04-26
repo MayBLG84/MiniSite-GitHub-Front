@@ -38,13 +38,30 @@ class Home {
 
   async getRepoInformation() {
     // API façon #2 : Récupérer le contenu avec l'Octokit JS + await (async)
-    const octokit = new Octokit();
     // https://api.github.com/users/MayBLG84/repos
+    const octokit = new Octokit();
     const response = await octokit
       .request("GET /users/MayBLG84/repos")
       .catch((error) => {
         console.log("Erreurs lors de l'appel api /users/MayBLG84/repos", error);
       });
+    const recentsProjects = response.data.slice(-3);
+    //URL pour récuperer les langages d'un projet
+    // https://api.github.com/repos/MayBLG84/(nom-du-repo)/languages
+    for (let i = 0; i < recentsProjects.length; i++) {
+      const languagesUrl = recentsProjects[i].languages_url;
+      const clearedUrl = languagesUrl.replace("https://api.github.com", "");
+      const responseLanguages = await octokit
+        .request(`GET ${clearedUrl}`)
+        .catch((error) => {
+          console.log(
+            "Erreurs lors de l'appel api /repos/MayBLG84/(nom-du-repo)/languages",
+            error,
+          );
+        });
+      const projectLanguages = responseLanguages.data;
+      recentsProjects[i].languages = projectLanguages;
+    }
     this.updateHTMLProjects(response.data);
   }
 
@@ -64,10 +81,22 @@ class Home {
       const project = projects[i];
       this.projectsTitle[htmlIndex].textContent = project.name;
       this.projectsDescription[htmlIndex].textContent = project.description;
-      const languages = project.topics;
-      console.log(languages);
+      this.createHTMLLanguageTag(
+        this.projectsTagContainer[htmlIndex],
+        project.languages,
+      );
       htmlIndex++;
     }
+  }
+
+  createHTMLLanguageTag(div, languages) {
+    const arrayLanguages = Object.keys(languages);
+    for (let i = 0; i < arrayLanguages.length; i++) {
+      const span = document.createElement("span");
+      span.textContent = arrayLanguages[i];
+      div.appendChild(span);
+    }
+    console.log("array", arrayLanguages);
   }
 }
 
