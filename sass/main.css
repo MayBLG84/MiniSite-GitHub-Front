@@ -1,0 +1,104 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Colors */
+.header {
+  background-color: #212121;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+}
+.header__back-home {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 100%;
+  background-color: #373737;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__icon {
+  filter: brightness(0) invert(1);
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.button, .button--secondary {
+  background-color: #373737;
+  border-radius: 0.5rem;
+  color: #dadada;
+  padding: 0.5rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+.button__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.button__label {
+  font-family: "Inter", no-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.button--secondary {
+  border: solid 1px #dadada;
+  background-color: transparent;
+}/*# sourceMappingURL=main.css.map */

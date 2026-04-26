@@ -1,0 +1,22 @@
+@use '../abstracts/_variables.sass' as var
+
+.header
+    background-color: var.$grey
+    border-radius: 0.5rem
+    padding: 0.75rem
+    display: flex
+    justify-content: space-between
+
+    &__back-home
+        width: 2.6rem
+        height: 2.6rem
+        border-radius: 100%
+        background-color: var.$light-grey
+        display: flex
+        justify-content: center
+        align-items: center
+
+    &__icon 
+        filter: brightness(0) invert(1)
+        width: 1.2rem
+        height: 1.2rem

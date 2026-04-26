@@ -92,9 +92,13 @@ class Home {
   createHTMLLanguageTag(div, languages) {
     const arrayLanguages = Object.keys(languages);
     for (let i = 0; i < arrayLanguages.length; i++) {
+      // Création dynamique
       const span = document.createElement("span");
       span.textContent = arrayLanguages[i];
       div.appendChild(span);
+      // Création par chaine de charactère : moins manipulable
+      // const spanRaw = <span class="${}">${arrayLanguages[i]}</span>;
+      // div.innerHTML += spanRaw
     }
     console.log("array", arrayLanguages);
   }
